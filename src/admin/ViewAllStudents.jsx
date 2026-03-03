@@ -1,35 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 export default function ViewAllStudents() {
-
-  const [data, setData] = useState([])
-  const [message, setMessage] = useState("")
-  const [error, setError] = useState("")
+  const [data, setData] = useState([]);
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   const fetchStudents = async () => {
     try {
-      const response = await axios.get("https://localhost:1235/adminapi/viewall")
-      setData(response.data)
-    }
-    catch (err) {
+      const response = await axios.get("http://localhost:1235/adminapi/viewall");
+      setData(response.data);
+      console.log("Response:", response.data);
+    } catch (err) {
       setError(err.message)
     }
   }
 
   useEffect(() => {
-    fetchStudents()
-  }, []) // runs only once
-
+    fetchStudents();
+  }, []); // * Empty Dependency (Input) - Runs Only once
   return (
     <div>
-      <h3 style={{ textAlign: "center" }}><u>View All Students</u></h3>
-
-      {
-        error && <p style={{ textAlign: "center", color: "red" }}>{error}</p>
-      }
-
-      <table border="1" align="center">
+      <h3 style={{ textAlign: "center" }}>
+        <u>View All Students</u>
+      </h3>
+      {error && <p style={{ textAlign: "center", color: "red" }}>{error}</p>}
+      <table border={1}>
         <thead>
           <tr>
             <th>ID</th>
@@ -40,23 +36,21 @@ export default function ViewAllStudents() {
             <th>CONTACT</th>
           </tr>
         </thead>
-
         <tbody>
           {
             data.map((student, index) => (
               <tr key={index}>
-                <td>{student.id}</td>
-                <td>{student.name}</td>
-                <td>{student.gender}</td>
-                <td>{student.department}</td>
-                <td>{student.email}</td>
-                <td>{student.contact}</td>
+                <td>{ student.id }</td>
+                <td>{ student.name }</td>
+                <td>{ student.gender }</td>
+                <td>{ student.department }</td>
+                <td>{ student.email }</td>
+                <td>{ student.contact }</td>
               </tr>
             ))
           }
         </tbody>
-
       </table>
     </div>
-  )
+  );
 }
