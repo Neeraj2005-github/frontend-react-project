@@ -3,6 +3,7 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import AdminHome from './AdminHome';
 import AddStudent from './AddStudent';
 import ViewAllStudents from './ViewAllStudents';
+import './admin.css'
 
 export default function AdminNavBar() {
     const navigate = useNavigate();
@@ -17,7 +18,8 @@ export default function AdminNavBar() {
             <Link to="/admin/home">Home</Link>
             <Link to="/admin/addstudent">Add Student</Link>
             <Link to="/admin/viewallstudents">All Students</Link>
-            <button onClick={adminLogout}></button>
+            <button onClick={adminLogout} className="logout-btn">Logout</button>
+
         </nav>
         <Routes>
             <Route path="/admin/home" element={ <AdminHome/> } />

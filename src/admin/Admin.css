@@ -39,10 +39,24 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .login-title {
     text-align: center;
     color: #333;
     margin-bottom: 25px;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
 }
 
 .login-form {
@@ -89,4 +103,15 @@ body {
 
 .login-btn:hover {
     background-color: #555;
+}
+
+.logout-btn {
+    padding: 12px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
