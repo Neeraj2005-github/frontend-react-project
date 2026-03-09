@@ -7,6 +7,8 @@ import { BrowserRouter as Router } from "react-router-dom"
 import NavBar from "./pages/NavBar"
 import { useEffect, useState } from "react"
 import AdminNavBar from "./admin/AdminNavBar";
+import FacultyNavBar from "./faculty/FacultyNavBar";
+import StudentNavBar from "./student/StudentNavBar";
 
 function App() {
   const [isAdmin, setisAdmin] = useState(false);
@@ -26,7 +28,7 @@ function App() {
     <div>
     <h1 style={{textAlign:"center"}}>Student Cerification Portal</h1>
     <Router> 
-        {isAdmin ? <AdminNavBar /> : <NavBar />}
+        {isAdmin ? <AdminNavBar /> : isFaculty ? <FacultyNavBar /> :isStudent ? <StudentNavBar />: <NavBar />}
     </Router>
     </div>
   )

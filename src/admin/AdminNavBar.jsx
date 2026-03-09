@@ -3,6 +3,8 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import AdminHome from './AdminHome';
 import AddStudent from './AddStudent';
 import ViewAllStudents from './ViewAllStudents';
+import AddFaculty from './AddFaculty';
+import ViewAllFaculty from './ViewAllFaculty';
 import './admin.css'
 
 export default function AdminNavBar() {
@@ -17,7 +19,10 @@ export default function AdminNavBar() {
         <nav className='navbar'>
             <Link to="/admin/home">Home</Link>
             <Link to="/admin/addstudent">Add Student</Link>
-            <Link to="/admin/viewallstudents">All Students</Link>
+            <Link to="/admin/viewallstudents">View All Students</Link>
+            <Link to="/admin/addfaculty">Add Faculty</Link>
+            <Link to="/admin/viewallfaculty">View All Faculty</Link>
+            
             <button onClick={adminLogout} className="logout-btn">Logout</button>
 
         </nav>
@@ -25,6 +30,8 @@ export default function AdminNavBar() {
             <Route path="/admin/home" element={ <AdminHome/> } />
             <Route path="/admin/addstudent" element={ <AddStudent/> } />
             <Route path="/admin/viewallstudents" element={ <ViewAllStudents/> } />
+             <Route path="/admin/addfaculty" element={ <AddFaculty/> } />
+            <Route path="/admin/viewallfaculty" element={ <ViewAllFaculty/> } />
             
         </Routes>
     </div>
