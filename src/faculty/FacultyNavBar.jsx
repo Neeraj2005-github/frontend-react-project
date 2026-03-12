@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import FacultyHome from './FacultyHome';
-import './faculty.css'
+import './Faculty.css'
 export default function FacultyNavBar() {
     const navigate = useNavigate();
     const facultyLogout = () => {
