@@ -5,7 +5,7 @@ import AddStudent from './AddStudent';
 import ViewAllStudents from './ViewAllStudents';
 import AddFaculty from './AddFaculty';
 import ViewAllFaculty from './ViewAllFaculty';
-import './admin.css'
+import './Admin.css'
 
 export default function AdminNavBar() {
     const navigate = useNavigate();
